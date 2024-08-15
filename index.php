@@ -1,69 +1,107 @@
+<?php
+// remove all session variables
+session_start();
+session_destroy();
+?>
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en" >
 <head>
-    <meta charset="utf-8">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <title>Controle de Usuários</title>
+  <meta charset="UTF-8">
+  <title>Controle de Acesso</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" 
+          href=
+"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+
 </head>
-
 <body>
-        <div class="container">
-          <div class="jumbotron">
-            <div class="row">
-                <h2>Gerenciamento de Usuários</h2>
-            </div>
-          </div>
-            </br>
-            <div class="row">
-                <p>
-                    <a href="create.php" class="btn btn-success">Adicionar</a>
-                </p>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Login</th>
-                            <th scope="col">Senha</th>
-                            <th scope="col">Ações</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        include 'banco.php';
-                        $pdo = Banco::conectar();
-                        $sql = 'SELECT * FROM usuario ORDER BY idUsuario DESC';
 
-                        foreach($pdo->query($sql)as $row)
-                        {
-                            echo '<tr>';
-			                echo '<th scope="row">'. $row['idUsuario'] . '</th>';
-                            echo '<td>'. $row['nome'] . '</td>';
-                            echo '<td>'. $row['login'] . '</td>';
-                            echo '<td>'. $row['senha'] . '</td>';
-                            
-                            echo '<td width=250>';
-                            echo '<a class="btn btn-primary" href="read.php?id='.$row['idUsuario'].'">Info</a>';
-                            echo ' ';
-                            echo '<a class="btn btn-warning" href="update.php?id='.$row['idUsuario'].'">Atualizar</a>';
-                            echo ' ';
-                            echo '<a class="btn btn-danger" href="delete.php?id='.$row['idUsuario'].'">Excluir</a>';
-                            echo '</td>';
-                            echo '</tr>';
-                        }
-                        Banco::desconectar();
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="assets/js/bootstrap.min.js"></script>
+<div class="caixatexto">
+
+<h1>Lorem<br><small>Ipsum</small></h1>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi dignissim, laoreet nunc at, fringilla augue. Nullam venenatis vulputate consectetur. Suspendisse nisl felis.</p>
+
+<div class="caixabnt">
+
+<a href="#"><button id="bnt1">Conheça</button></a>
+<a href="#"><button id="bnt2">Sobre</button></a>
+
+</div>
+</div>
+
+
+<div class="formulario">
+
+<form method="post">
+
+<h3>Faça login com sua conta</h3>
+
+
+<label>Login</label>
+	<input type="text" name="login" placeholder="Digite seu login" required>
+
+  <!-- <i class="fa-solid fa-key"></i> -->
+  
+	
+  <label>Senha</label>
+  <p>
+    <input type="password" id = "senha" name="senha" placeholder="Digite sua Senha" required/>	
+    <i style="margin-left: -30px;cursor: pointer; " class="bi bi-eye-slash" id="togglePassword"></i>
+  </p>
+  
+
+<div class="bntlogin">
+<button id="bntlogin1">Login In</button>
+<!-- <button id="bntlogin2">Sign Up</button> -->
+</div>
+
+
+<a id="esqueceu" href="#">Esqueceu sua senha? <span style="color:red">Clique aqui</span></a>
+
+</form>	
+
+
+</div>	
+
+
+
+
+
+  <script src="./assets/js/login.js" ></script>
 </body>
-
 </html>
+<?php
+    if(!empty($_POST)){
+
+    
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
+    
+    include 'banco.php';
+    $pdo = Banco::conectar();
+    // verifica se o usuário está no BD
+    $sql = 'SELECT * FROM usuario u where u.login = "'.$login.'" and u.senha = "'.$senha .'"' ;
+    $result = $pdo->query($sql);
+    $rows = $result->fetchAll();
+    if(sizeof($rows)==1){
+        // inicia a sessão
+        session_start();
+        // guarda na sessão o nome do usuário
+        $_SESSION["logged_user"] = $rows[0]['nome'];
+        // guarda o conjunto de páginas que o usuário tem acesso
+        $sql = 'SELECT p.nome, p.link FROM pagina p join perfil_pagina pp ON (idPagina=fkPagina) join (usuario u) on u.fkPerfil = pp.fkPerfil WHERE idUsuario = '. $rows[0]['idUsuario'];
+        $result = $pdo->query($sql);
+        $rows = $result->fetchAll();
+        foreach($rows as $row){
+          echo $row;
+        }
+        $_SESSION["pages"] = $rows;
+
+
+    }
+    Banco::desconectar();
+    header("Location: home.php");
+}
+?>

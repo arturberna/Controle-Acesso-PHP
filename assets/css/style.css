@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swa');
+
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+}
+
+
+body{
+
+
+	font-family: open sans, arial;
+	background: linear-gradient(to left, #1cbe42, #0070e0e8);
+	display: flex;
+	justify-content: flex-end;
+	height: 100vh;
+
+
+}
+
+
+form h3{
+
+	font-size: 17px;
+	margin-bottom: 30px;
+	padding-left: 40px;
+	
+
+}
+
+.formulario{
+
+	background-color: #ffffff;
+	width: 500px;
+	height: 100vh;
+	box-shadow: 50px 50px 80px black;
+	
+
+}
+
+
+.fa-user{
+
+	position: absolute;
+	margin-top: 70px;
+	padding-left: 8px;
+	color: #878787;
+}
+
+
+
+.fa-key{
+
+	position: absolute;
+	margin-top: 25px;
+	padding-left: 8px;
+	color: #878787;
+}
+.faKeyIcon {
+	position:relative;
+}
+
+.faKeyIcon:before {
+	font-family: FontAwesome;
+	top:0;
+	left:-5px;
+	padding-right:10px;
+	content: "\f0a9"; 
+}
+
+
+form{
+	display: flex;
+	width: 400px;
+	height: 100vh;
+	margin: 0 auto;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 30px;
+
+
+}
+
+
+
+.redesocialtext{
+	display: flex;
+}
+
+.fa-fw{
+	margin-right: 5px;
+}
+
+
+
+
+
+label{
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	color: #9a9a9a;
+}
+
+
+input[type=password]{
+
+	background-color: transparent;
+	width: 260px;
+	padding: 8px 30px;
+	border: solid 1px #d0d0d0;
+	color: #656565;
+	font-family: open sans, arial;
+	font-weight: bold;
+}
+
+
+
+input[type=text]{
+
+	background-color: transparent;
+	width: 260px;
+	padding: 8px 30px;
+	border: solid 1px #d0d0d0;
+	color: #656565;
+	font-family: open sans, arial;
+	font-weight: bold;
+
+}
+
+
+input[type=checkbox]{
+
+		margin-top: 20px;
+}
+
+#conectado{
+
+	position: absolute;
+	margin-top: 69px;
+	margin-left: 18px;
+	font-size: 12px;
+}
+
+.bntlogin{
+	display: flex;
+	margin-top: 20px;
+}
+
+#bntlogin1{
+
+	background: linear-gradient(to left, #1cbe42, #0070e0e8);
+	width: 80px;
+	padding: 8px;
+	margin: 5px;
+	font-size: 12px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-family: arial;
+	font-weight: bold;
+
+
+}
+
+#bntlogin2{
+
+	border: solid 1px #b6b7b9;
+	width: 80px;
+	padding: 8px;
+	margin: 5px;
+	font-size: 12px;
+	color: #424242;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: transparent;
+	border-radius: 5px;
+
+
+}
+
+#esqueceu{
+	color: #797979;
+	font-size: 13px;
+	font-weight: bold;
+	margin-top: 20px;
+
+
+}
+
+#esqueceu:hover{
+	color: #4a4a4b;
+
+
+}
+
+/**** DIVISION */
+
+
+
+
+.caixatexto{
+	
+	max-width: 450px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	flex-direction: column;
+	
+
+}
+
+
+.caixatexto h1{
+	color: white;	
+
+}
+
+.caixatexto small{
+
+	color: white;
+	font-size: 40px;
+}
+
+.caixatexto p{
+
+	font-size: 13px;
+	color: white;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+
+#bnt1{
+
+	padding: 10px 18px;
+	background-color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 5px;
+	color: #8c38e1;
+	transition: 0.3s;
+	
+
+
+}
+
+
+
+#bnt1:hover{
+
+	background-color: #6e10ce;
+	color: white;
+	
+
+}
+
+
+#bnt2{
+
+	padding: 10px 18px;
+	background-color: transparent;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 5px;
+	border: solid 1px white;
+	color: white;
+	transition: 0.3s;
+}
+
+
+#bnt2:hover{
+
+	background-color: white;
+	color: #6e10ce;
+
+
+}

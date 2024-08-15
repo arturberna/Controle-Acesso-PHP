@@ -68,7 +68,7 @@
 </html>
 
 <?php
-    require 'banco.php';
+    require '../banco.php';
     if(!empty($_POST))
     {
        //pega os dados do formulário utilizando o método post

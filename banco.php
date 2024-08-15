@@ -2,7 +2,7 @@
 class Banco
 {
     //colocar o nome do banco de dados que foi criado
-    private static $dbNome = 'Controle_Acesso';
+    private static $dbNome = 'controle_acesso';
     private static $dbHost = 'localhost';
     private static $dbUsuario = 'root';
     private static $dbSenha = '';
