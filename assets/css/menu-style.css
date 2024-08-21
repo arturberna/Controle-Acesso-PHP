@@ -1,0 +1,23 @@
+.my-primary{
+	color: lightYellow ;
+	
+    background: linear-gradient(to left, #1cbe42, #0070e0e8);
+  }
+  
+  .my-primary:focus, .my-primary:hover{
+	color: yellow ;
+	background-color: darkRed;
+  }
+.blue-green{
+    color: lightYellow ;
+	
+    background: linear-gradient(to left, #1cbe42, #0070e0e8);
+}
+.custom-green{
+    color: lightYellow ;
+    background-color: #1cbe42cf;
+}
+.custom-blue{
+    color: lightYellow ;
+    background-color: #0070e0e8;
+}
