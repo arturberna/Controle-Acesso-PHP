@@ -8,9 +8,7 @@
 	outline: none;
 }
 
-
 body{
-
 
 	font-family: open sans, arial;
 	background: linear-gradient(to left, #1cbe42, #0070e0e8);
@@ -26,55 +24,27 @@ form h3{
 
 	font-size: 17px;
 	margin-bottom: 30px;
-	padding-left: 40px;
+	text-align: center;
 	
 
+}
+.form-fields{
+	margin-left: auto;
+  	margin-right: auto;
+	width: 100%;
 }
 
 .formulario{
 
 	background-color: #ffffff;
-	width: 500px;
+	width: 40%;
 	height: 100vh;
 	box-shadow: 50px 50px 80px black;
-	
-
 }
-
-
-.fa-user{
-
-	position: absolute;
-	margin-top: 70px;
-	padding-left: 8px;
-	color: #878787;
-}
-
-
-
-.fa-key{
-
-	position: absolute;
-	margin-top: 25px;
-	padding-left: 8px;
-	color: #878787;
-}
-.faKeyIcon {
-	position:relative;
-}
-
-.faKeyIcon:before {
-	font-family: FontAwesome;
-	top:0;
-	left:-5px;
-	padding-right:10px;
-	content: "\f0a9"; 
-}
-
 
 form{
 	display: flex;
-	width: 400px;
+	width: 85%;
 	height: 100vh;
 	margin: 0 auto;
 	flex-direction: column;
@@ -83,17 +53,6 @@ form{
 
 
 }
-
-
-
-.redesocialtext{
-	display: flex;
-}
-
-.fa-fw{
-	margin-right: 5px;
-}
-
 
 
 
@@ -107,44 +66,19 @@ label{
 }
 
 
-input[type=password]{
+input[type=password],input[type=text]{
 
 	background-color: transparent;
-	width: 260px;
+	width: 100%;
 	padding: 8px 30px;
 	border: solid 1px #d0d0d0;
 	color: #656565;
 	font-family: open sans, arial;
 	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 7px;
 }
 
-
-
-input[type=text]{
-
-	background-color: transparent;
-	width: 260px;
-	padding: 8px 30px;
-	border: solid 1px #d0d0d0;
-	color: #656565;
-	font-family: open sans, arial;
-	font-weight: bold;
-
-}
-
-
-input[type=checkbox]{
-
-		margin-top: 20px;
-}
-
-#conectado{
-
-	position: absolute;
-	margin-top: 69px;
-	margin-left: 18px;
-	font-size: 12px;
-}
 
 .bntlogin{
 	display: flex;
@@ -154,7 +88,7 @@ input[type=checkbox]{
 #bntlogin1{
 
 	background: linear-gradient(to left, #1cbe42, #0070e0e8);
-	width: 80px;
+	width: 95%;
 	padding: 8px;
 	margin: 5px;
 	font-size: 12px;
@@ -167,21 +101,7 @@ input[type=checkbox]{
 
 }
 
-#bntlogin2{
 
-	border: solid 1px #b6b7b9;
-	width: 80px;
-	padding: 8px;
-	margin: 5px;
-	font-size: 12px;
-	color: #424242;
-	font-weight: bold;
-	cursor: pointer;
-	background-color: transparent;
-	border-radius: 5px;
-
-
-}
 
 #esqueceu{
 	color: #797979;
@@ -206,6 +126,7 @@ input[type=checkbox]{
 .caixatexto{
 	
 	max-width: 450px;
+	width: 60%;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -282,4 +203,9 @@ input[type=checkbox]{
 	color: #6e10ce;
 
 
+}
+
+.ico-pos{
+	margin-right: -25px;
+	cursor: pointer; 
 }
