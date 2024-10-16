@@ -13,9 +13,14 @@
 	
     background: linear-gradient(to left, #1cbe42, #0070e0e8);
 }
+.blue-purple{
+  color: lightYellow ;
+
+  background: linear-gradient(to left, #b518a049,#6d1cbe);
+}
 .custom-green{
     color: lightYellow ;
-    background-color: #1cbe42cf;
+    background-color: #0c6e35cf;
 }
 .custom-blue{
     color: lightYellow ;
