@@ -71,8 +71,7 @@ session_destroy();
 </html>
 <?php
     if(!empty($_POST)){
-
-    
+   
     $login = $_POST['login'];
     $senha = $_POST['senha'];
     
